@@ -96,7 +96,7 @@ def evaporator_calc(
         stage_conc_m3h.append(next_conc_kgph / 1000)
         stage_vap_m3h.append(vap_kgph / 1000)
 
-    steam_econ = n_effects * 0.92
+    steam_econ = n_effects * 0.85
 
     steam_needed_kgph = evap_kgph / steam_econ if steam_econ > 0 else 0
     latent_heat = 2300  # kJ/kg
