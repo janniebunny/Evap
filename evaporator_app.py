@@ -96,12 +96,8 @@ def evaporator_calc(
         stage_conc_m3h.append(next_conc_kgph / 1000)
         stage_vap_m3h.append(vap_kgph / 1000)
 
-    if prod_dm_pct < 12:
-        steam_econ = 2.3
-    elif prod_dm_pct < 18:
-        steam_econ = 2.1
-    else:
-        steam_econ = 1.8
+    steam_econ = n_effects * 0.92
+
     steam_needed_kgph = evap_kgph / steam_econ if steam_econ > 0 else 0
     latent_heat = 2300  # kJ/kg
     total_thermal_kW = evap_kgph * latent_heat / 3600
