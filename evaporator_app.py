@@ -142,10 +142,18 @@ def evaporator_calc(
 
 # ---- Streamlit UI ----
 st.set_page_config(page_title="Multi-effect Evaporator Design Tool", layout="wide")
-st.title("Multi-effect Evaporator Design Calculator")
+
+# --- Company logo top right ---
+col1, col2 = st.columns([6,1])
+with col1:
+    st.title("Multi-effect Evaporator Design Calculator")
+with col2:
+    st.image("logo.png", width=160)  # Adjust width as needed
+
 st.markdown("""
 *All calculations based on standard thermodynamics and referenced correlations. Results are for indicative engineering only. BPE values use NaCl curve as basis. For other salts, contact admin.*
 """)
+
 
 col1, col2 = st.columns(2)
 with col1:
